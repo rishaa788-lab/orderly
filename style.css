@@ -1,0 +1,149 @@
+/* ===== Orderly look =====
+   Every colour comes from your Figma design. Change a colour here once
+   and it changes everywhere. */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --blue:  #007AA6;   /* header banners, borders, buttons */
+  --cream: #F9EECF;   /* cards, forms, table cells, sidebar */
+  --gold:  #F0DA9C;   /* table headers, logo chips */
+  --sky:   #DDEFF6;   /* inputs, overview tiles */
+  --grey:  #F3F3F3;   /* dashboard background */
+  --ink:   #1A1A1A;   /* text */
+}
+
+/* ---------- fonts ---------- */
+.stApp, .stApp p, .stApp li, .stApp label, .stApp input, .stApp textarea,
+.stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp button p,
+.stApp [data-baseweb="tab"] p, .stApp [data-baseweb="select"] div {
+  font-family: 'Nunito', sans-serif;
+}
+.stApp, .stApp p, .stApp label { color: var(--ink); }
+.stApp label p { font-weight: 700; font-size: .9rem; }
+
+/* ---------- page frame ---------- */
+#MainMenu, footer, [data-testid="stToolbar"], [data-testid="stDecoration"] { display: none !important; }
+header[data-testid="stHeader"] { background: transparent; }
+.block-container { padding: 0 3rem 3rem !important; }
+
+/* ---------- banners ---------- */
+.banner {
+  background: var(--blue); color: #fff;
+  margin: 0 -3rem 1.75rem; padding: 2.8rem 3rem 1.5rem;
+}
+.stApp .banner h1 {
+  color: #fff; margin: 0; padding: 0; font-size: 1.7rem; font-weight: 800;
+  letter-spacing: .05em; text-transform: uppercase;
+}
+.stApp .banner p { color: #fff; margin: .3rem 0 0; font-size: .95rem; }
+.banner.home { display: flex; align-items: center; gap: 1rem; }
+.banner.home h1 { text-transform: none; letter-spacing: 0; font-size: 1.9rem; }
+.logo-chip {
+  flex: none; width: 60px; height: 60px; border-radius: 16px;
+  background: var(--gold); overflow: hidden;
+}
+.logo-chip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.stApp .section { font-size: 1.15rem; font-weight: 800; margin: 1.3rem 0 .4rem; color: var(--ink); }
+
+/* ---------- sidebar ---------- */
+[data-testid="stSidebar"] { background: var(--cream); border-right: 1px solid var(--blue); }
+[data-testid="stSidebarHeader"] { background: var(--blue); padding: .8rem 1rem 0; }
+[data-testid="stSidebarHeader"] button, [data-testid="stSidebarHeader"] svg { color: #fff; fill: #fff; }
+[data-testid="stSidebarUserContent"] { padding: 0 1.5rem 1rem !important; }
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] { gap: 0; }
+.side-head {
+  display: flex; align-items: center; gap: .8rem;
+  margin: 0 -1.5rem 0; padding: .4rem 1.5rem 1.4rem; background: var(--blue);
+}
+.side-head .logo-chip { width: 52px; height: 52px; border-radius: 14px; }
+.stApp .side-head span { color: #fff; font-size: 1.35rem; font-weight: 800; letter-spacing: .06em; }
+[data-testid="stSidebar"] .stButton > button {
+  width: 100%; justify-content: flex-start; background: transparent; color: var(--ink);
+  border: 0; border-bottom: 1px solid var(--blue); border-radius: 0; padding: 1rem .5rem;
+}
+[data-testid="stSidebar"] .stButton > button p { font-size: 1.05rem; font-weight: 700; }
+[data-testid="stSidebar"] .stButton > button:hover { background: var(--gold); color: var(--ink); border-color: var(--blue); }
+[data-testid="stSidebar"] .stButton > button[kind="primary"],
+[data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"] {
+  background: var(--blue); color: #fff;
+}
+[data-testid="stSidebar"] .stButton > button[kind="primary"] p,
+[data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"] p { color: #fff; }
+
+/* ---------- inputs ---------- */
+[data-baseweb="input"], [data-baseweb="textarea"], [data-baseweb="select"] > div {
+  background: var(--sky) !important; border: 1px solid var(--blue) !important; border-radius: 8px !important;
+}
+[data-baseweb="base-input"], [data-baseweb="input"] input { background: transparent !important; }
+.stApp input:disabled { -webkit-text-fill-color: var(--ink); opacity: .75; }
+
+/* ---------- buttons ---------- */
+.stButton > button, [data-testid="stFormSubmitButton"] > button, [data-testid="stDownloadButton"] > button {
+  background: var(--sky); color: var(--blue); border: 1px solid var(--blue);
+  border-radius: 8px; font-weight: 700; padding: .45rem 1.2rem;
+}
+.stButton > button p, [data-testid="stFormSubmitButton"] > button p, [data-testid="stDownloadButton"] > button p {
+  color: var(--blue); font-weight: 700;
+}
+.stButton > button:hover, [data-testid="stFormSubmitButton"] > button:hover, [data-testid="stDownloadButton"] > button:hover {
+  background: var(--blue); border-color: var(--blue);
+}
+.stButton > button:hover p, [data-testid="stFormSubmitButton"] > button:hover p, [data-testid="stDownloadButton"] > button:hover p { color: #fff; }
+.stButton > button[kind="primary"], [data-testid="stFormSubmitButton"] > button[kind="primary"],
+.stButton > button[data-testid="stBaseButton-primary"],
+[data-testid="stFormSubmitButton"] > button[data-testid="stBaseButton-primaryFormSubmit"] { background: var(--blue); }
+.stButton > button[kind="primary"] p, [data-testid="stFormSubmitButton"] > button[kind="primary"] p,
+.stButton > button[data-testid="stBaseButton-primary"] p,
+[data-testid="stFormSubmitButton"] > button[data-testid="stBaseButton-primaryFormSubmit"] p { color: #fff; }
+
+/* ---------- forms = cream cards ---------- */
+[data-testid="stForm"] {
+  background: var(--cream); border: 1px solid var(--blue); border-radius: 24px; padding: 1.6rem;
+}
+
+/* ---------- tabs ---------- */
+[data-baseweb="tab-list"] { background: var(--cream); border: 1px solid var(--blue); border-radius: 8px; gap: 0; margin-bottom: 1rem; }
+button[data-baseweb="tab"] { height: 42px; padding: 0 1.3rem; background: transparent; }
+button[data-baseweb="tab"] p { font-size: .78rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
+button[data-baseweb="tab"][aria-selected="true"] { background: var(--blue); }
+button[data-baseweb="tab"][aria-selected="true"] p { color: #fff; }
+[data-baseweb="tab-highlight"], [data-baseweb="tab-border"] { display: none; }
+
+/* ---------- tables ---------- */
+.tbl-wrap { overflow-x: auto; margin: .4rem 0 1.4rem; }
+.tbl { width: 100%; border-collapse: collapse; background: var(--cream); font-size: .92rem; }
+.tbl th { background: var(--gold); text-align: left; font-weight: 800; padding: .6rem .9rem; border: 1px solid var(--blue); }
+.tbl td { padding: .55rem .9rem; border: 1px solid var(--blue); }
+
+/* ---------- status pills ---------- */
+.pill { display: inline-block; padding: .15rem .75rem; border-radius: 999px; font-size: .78rem; font-weight: 800; }
+.pill.active { background: var(--blue); color: #fff; }
+.pill.completed { background: var(--sky); color: var(--blue); border: 1px solid var(--blue); }
+.pill.cancelled { background: var(--grey); color: #555; border: 1px solid #bdbdbd; }
+
+/* ---------- dashboard tiles ---------- */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.6rem; }
+@media (max-width: 900px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+.tile { position: relative; min-height: 108px; padding: 1rem 1.1rem; background: var(--sky); border: 1.5px solid var(--blue); border-radius: 16px; }
+.tile .ico { position: absolute; top: .8rem; right: .9rem; color: var(--blue); font-weight: 800; font-size: 1.1rem; line-height: 1; }
+.tile .ico svg { width: 22px; height: 22px; fill: none; stroke: var(--blue); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tile .val { margin-top: 1rem; font-size: 1.7rem; font-weight: 800; line-height: 1.1; }
+.tile .lbl { font-size: .82rem; font-weight: 700; color: var(--blue); }
+
+/* ---------- order details ---------- */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .9rem 1.2rem;
+  background: var(--cream); border: 1px solid var(--blue); border-radius: 16px; padding: 1rem 1.2rem; margin: .5rem 0 1rem; }
+.facts span { display: block; font-size: .75rem; font-weight: 800; color: var(--blue); }
+.facts b { font-weight: 700; }
+.total-bar { display: flex; justify-content: space-between; background: var(--gold); border: 1px solid var(--blue);
+  border-radius: 12px; padding: .7rem 1rem; font-weight: 800; margin: .4rem 0 1rem; }
+
+/* ---------- messages ---------- */
+.notice { display: flex; gap: .7rem; align-items: center; padding: .7rem 1rem; margin: .5rem 0 1rem;
+  border: 1px solid var(--blue); border-radius: 12px; font-weight: 600; }
+.notice b { flex: none; width: 1.5rem; height: 1.5rem; border-radius: 50%; display: inline-flex;
+  align-items: center; justify-content: center; background: var(--blue); color: #fff; font-size: .85rem; }
+.notice.success { background: var(--sky); }
+.notice.info { background: var(--cream); }
+.notice.error { background: var(--gold); }
