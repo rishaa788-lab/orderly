@@ -1,0 +1,14 @@
+# Colours from the Figma design (this is only a settings file, no CSS)
+[theme]
+base = "light"
+primaryColor = "#007AA6"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#DDEFF6"
+textColor = "#1A1A1A"
+
+[theme.sidebar]
+backgroundColor = "#F9EECF"
+secondaryBackgroundColor = "#F0DA9C"
+
+[browser]
+gatherUsageStats = false
